@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Nook</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: grey;
+        }
+
+        .navigation {
+            height: 180px;
+            width: 200px;
+            background-color: lightgrey;
+            margin-top: 200px;
+            position: fixed;
+
+        }
+        .container {
+            width: 1200px;
+            height: 4100px;
+            background-color: darkseagreen;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        nav {
+            width: 800px;
+            height: 100px;
+            background-color: whitesmoke;
+            color: black;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-top: 25px;
+            padding: 0;
+            width: 180px;
+            text-align: right;
+        }
+
+
+        li a {
+            display: block;
+        }
+        li a:hover {
+            font-size:32px;
+            transition:.25s;
+        }
+
+
+        a:link {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: black;
+            cursor: hand;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: black;
+        }
+        #section-01 {
+            width: 1200px;
+            height: 800px;
+            background-color: darkgreen;
+            color: white;
+            text-align: center;
+            text-decoration-line:overline;
+            padding-top:25px;
+        }
+
+
+        #section-03, #section-05 {
+            width: 1200px;
+            height: 800px;
+            background-color: darkgreen;
+            color: white;
+            text-align: center;
+        }
+
+        #section-02, #section-04 {
+            width: 1200px;
+            height: 800px;
+            background-color: #fcd47a;
+            color: black;
+            text-align: center;
+        }
+
+        p {
+            display: inline;
+            padding: 0 20px;
+            font-family: Bookman Old Style, serif;
+            font-weight: 500;
+        }
+
+        footer {
+            width: 1200px;
+            height: 75px;
+            background-color: white;
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+        }
+
+    </style>
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+<div id="top"></div>
+<!--Here is the body of the website -->
+<div class="container">
+    <div class="navigation">
+        <ul>
+            <li><a href="#section-01"><p id="nav-section-01">Home</p></a></li>
+            <li><a href="#section-02"><p id="nav-section-02">Menu</p></a></li>
+            <li><a href="#section-03"><p id="nav-section-03">Contact</p></a></li>
+            <li><a href="#section-04"><p id="nav-section-04">Events</p></a></li>
+            <li><a href="#section-05"><p id="nav-section-05">Photos</p></a></li>
+
+        </ul><!--the pound symbol makes it a bookmark link -->
+    </div>
+
+
+    <div id="section-01"><p style="font-size: 100px">NOOK</p>
+        <img src="burger_fries.jpg"/>
+    </div>
+    <div id="section-02"><p style="font-size: 50px">Menu</p></div>
+    <div id="section-03"><p style="font-size: 50px">Contact</p></div>
+    <div id="section-04"><p style="font-size: 50px">Events</p></div>
+    <div id="section-05"><p style="font-size: 50px">Photos</p></div>
+
+    <footer><a href="#top">Back to top</a></footer>
+</div><!--end of wrapper-->
+<script>
+    $(document).ready(function () {
+        // Add smooth scrolling to all links
+        $("a").on('click', function (event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 500, function () {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+    });
+</script>
+</body>
+</html>
